@@ -11,10 +11,10 @@ const typeDefs = gql`
     year: Int!
     genre: String
     createdAt: String!
-    updateAt: String!
+    updatedAt: String!
   }
   type Mutation{
-    createMovie(title: String!, year: Int!, genre: String):Movie
+    createMovie(title: String!, year: Int!, genre: String): Movie
     deleteMovie(id: String!):Boolean
   }
   type Query {
@@ -32,11 +32,10 @@ const resolvers = {
   Mutation: {
     createMovie: (_, {title, year, genre})=>{
       client.movie.create({
-        data:{
-          title,
+          title:"1",
           year,
           genre,
-      }})
+      })
     },
     deleteMovie: (_, {title}) =>{
       console.log(title);

@@ -12,6 +12,7 @@ export default{
                 username,
                 email, 
                 password: newPassword,
+                bio
             }, 
             {loggedInUser})=>{                
                 let uglyPassword = null;

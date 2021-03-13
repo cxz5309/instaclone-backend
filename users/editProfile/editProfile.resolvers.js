@@ -27,7 +27,8 @@ export default{
                         firstName, 
                         lastName, 
                         username, 
-                        email, 
+                        email,
+                        bio,
                         ...(uglyPassword && {password: uglyPassword})
                     }
                 });

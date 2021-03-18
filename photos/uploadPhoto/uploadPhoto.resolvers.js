@@ -7,7 +7,6 @@ export default{
         uploadPhoto: protectedResolver(
             async (_, {file, caption}, {loggedInUser}) => {
             {
-                let hashtags = null;
                 if(caption){
                     ///parse caption
                     const hashtagObj = processHashtags(caption);

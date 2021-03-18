@@ -20,6 +20,18 @@ export default {
                 },
             })
         },
+        likes:({id}) =>{
+            return client.like.count({
+                where:{photoId: id}
+            })
+        },
+        comments: ({id}) => client.comment.count({where:{photoId:id}}),
+        isMind: ({userId}, _, {loggedInUser}) => {
+            if(!loggedInUser){
+                return false;
+            }
+            return userId === loggedInUser.id
+        },
     },
 
     Hashtag: {

@@ -24,40 +24,19 @@ export default{
                     error:"Photo not found."
                 }
             }
-            console.log(oldPhoto.hashtags);
-            const tmp = await client.photo.findFirst({
-                where:{
-                    id:1,
-                    userId:loggedInUser.id
-                },
-                include:{
-                    hashtags:{
-                        select:{
-                            hashtag:true,
-                        }
-                    }
-                }});
-            console.log(tmp.hashtags);
-
             const photo = await client.photo.update({
                 where:{
                     id
-                },
-                include:{
-                    hashtags:{
-                        select:{
-                            hashtag:true,
-                        }
-                    }
                 },
                 data:{
                     caption,
                     hashtags:{
                         disconnect: oldPhoto.hashtags,
-                        connectOrCreate: processHashtags(caption),
+                        connectOrCreate:processHashtags(caption),
                     }
                 }
             });
+            console.log(photo);
         })
     }
 }

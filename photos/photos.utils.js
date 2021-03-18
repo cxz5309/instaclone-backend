@@ -1,7 +1,7 @@
 export const processHashtags = (caption) =>{
-    ///parse caption
-    hashtags = caption.match(/#[\w]+/g);
-    return hashtags.map(hashtag =>({
+    console.log(caption)
+    const hashtags_cut = caption.match(/#[\w]+/g||[]);
+    return hashtags_cut.map(hashtag =>({
         where:{hashtag}, create:{hashtag}
     }));
 }

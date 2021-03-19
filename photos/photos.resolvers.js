@@ -26,7 +26,7 @@ export default {
             })
         },
         comments: ({id}) => client.comment.count({where:{photoId:id}}),
-        isMind: ({userId}, _, {loggedInUser}) => {
+        isMine: ({userId}, _, {loggedInUser}) => {
             if(!loggedInUser){
                 return false;
             }

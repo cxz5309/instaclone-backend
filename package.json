@@ -23,6 +23,7 @@
   "description": "",
   "dependencies": {
     "apollo-server-express": "^2.21.1",
+    "aws-sdk": "^2.867.0",
     "bcrypt": "^5.0.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

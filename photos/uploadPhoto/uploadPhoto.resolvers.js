@@ -11,10 +11,9 @@ export default{
                 if(caption){
                     ///parse caption
                     const hashtagObj = processHashtags(caption);
-                    console.log(hashtagObj);
                     //get or create Hashtags
                     const fileUrl = await uploadToS3(file, loggedInUser.id, "uploads");
-                    return client.photo.create({
+                    return await client.photo.create({
                         data:{
                             file,
                             caption,

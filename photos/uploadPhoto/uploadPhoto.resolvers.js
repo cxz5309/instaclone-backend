@@ -15,7 +15,7 @@ export default{
                     const fileUrl = await uploadToS3(file, loggedInUser.id, "uploads");
                     return await client.photo.create({
                         data:{
-                            file,
+                            file: fileUrl,
                             caption,
                             user:{
                                 connect:{

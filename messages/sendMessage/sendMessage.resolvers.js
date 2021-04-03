@@ -21,7 +21,7 @@ export default{
                         error: "This user does not exist."
                     };
                 }
-                const room = await client.room.create({
+                room = await client.room.create({
                     data: {
                         users: {
                             connect: [
@@ -29,7 +29,7 @@ export default{
                                     id: userId,
                                 },
                                 {
-                                    id: loggenInUser,
+                                    id: loggedInUser.id,
                                 }
                             ]
                         }

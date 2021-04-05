@@ -5,13 +5,7 @@ export default{
         users: ({id}) => client.room.findUnique({
             where: {id}}).users(),
         messages: async ({id}) =>{
-            console.log("룸아디" + id)
-            console.log(await client.message.findMany({
-                where: {
-                    roomId: id
-                }
-            }))
-            await client.message.findMany({
+            return await client.message.findMany({
                 where: {
                     roomId: id
                 }
@@ -35,6 +29,8 @@ export default{
         }
     },
     Message: {
-        user: ({id}) => client.message.findUnique({where:{id}}).user()
+        user: ({id}) => {
+            return client.message.findUnique({where:{id}}).user();
+        }
     }
 }

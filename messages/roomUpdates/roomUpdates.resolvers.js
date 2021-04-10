@@ -4,7 +4,7 @@ import pubsub from "../../pubub";
 import { protectedResolver } from "../../users/users.utils";
 
 export default{
-    Sucscription: {
+    Subscription: {
         roomUpdates: {
             subscribe: () => pubsub.asyncIterator(NEW_MESSAGE),
         }

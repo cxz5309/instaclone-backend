@@ -10,7 +10,7 @@
 - rust로 만들어져서 빠르단다.
 - datasource : 데이터베이스 주소(url)와 종류(provider)를 알려준다.
 - .env에 포함되는 데이터베이스 경로
-  - DATABASE_URL="[사용자 이름]://young:randompassword@localhost:5432/[데이터베이스명]?schema=public"
+  - DATABASE_URL="[사용자 이름]://young:[비밀번호]@localhost:5432/[데이터베이스명]?schema=public"
 - client : 어떤 방식으로 데이터베이스와 상호작용하는가
 - model : 모델
   - @id : id
@@ -18,7 +18,14 @@
   - autoincreament() : 숫자 1씩 자동 증가 
   - @default(now()) : 모델 생성시 현재 시간 추가 
   - @updatedAt : 업데이트 시점에 현재 시간 추가
+  - @unique : 동일한 이름이 하나만 존재, 더넣으면 거절됨
   
 <br />
 
 - 마이그레이트 : npx prisma migrate dev init 
+
+<br />
+
+- @prisma/client
+  - 클라이언트에서 db를 이용하게 해준다
+  - findFirst : 첫번째값 리턴

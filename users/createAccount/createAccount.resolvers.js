@@ -1,6 +1,5 @@
-import client from "../client"
+import client from "../../client"
 import bcrypt from "bcrypt"
-
 export default{
     Mutation: {
         createAccount: async (_, {firstName, lastName, username, email, password,}) => {
@@ -36,6 +35,6 @@ export default{
             catch(error){
                 return error;
             }
-        }
+        },
     }
 }

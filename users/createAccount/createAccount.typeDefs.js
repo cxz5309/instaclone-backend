@@ -7,11 +7,11 @@ export default gql`
     }
     type Mutation{
         createAccount(
-            firstName: String!
+            firstName: String
             lastName: String
-            username: String!
-            email: String!
-            password: String!
+            username: String
+            email: String
+            password: String
         ): CreateAccountResult!
   }
 `;

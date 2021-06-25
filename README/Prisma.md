@@ -30,4 +30,7 @@
   - 클라이언트에서 db를 이용하게 해준다
   - findFirst : 첫번째값 리턴
   - findUnique : prisma/client에서 findFirst와 findUnique의 가장 큰 차이점은 findUnique는 속성이 unique인 필드만 찾는다는 것이다. 따라서 findUnique가 기본적으로 빠르다
-  - 
+
+
+<br />
+- 만약 prisma에 undefined를 보낼 경우 데이터베이스에는 그 값들을 보내지 않는다.

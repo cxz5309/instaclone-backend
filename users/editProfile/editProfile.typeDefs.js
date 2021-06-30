@@ -11,6 +11,9 @@ export default gql `
         lastName: String
         username: String
         email: String
-        password: String): EditProfileRsult!
+        password: String
+        bio: String
+        avatar: Upload
+        ): EditProfileRsult!
     }
 `;

@@ -3,8 +3,8 @@ import { loadFilesSync, makeExecutableSchema, mergeTypeDefs, mergeResolvers } fr
 const loadedTypes = loadFilesSync(`${__dirname}/**/*.typeDefs.js`);
 const loadedResolvers = loadFilesSync(`${__dirname}/**/*.resolvers.js`)
 
-const typeDefs = mergeTypeDefs(loadedTypes);
-const resolvers = mergeResolvers(loadedResolvers);
+export const typeDefs = mergeTypeDefs(loadedTypes);
+export const resolvers = mergeResolvers(loadedResolvers);
 
-const schema = makeExecutableSchema({typeDefs, resolvers});
-export default schema;
+// const schema = makeExecutableSchema({typeDefs, resolvers});
+// export default schema;

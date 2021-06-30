@@ -9,8 +9,12 @@
 - payload, secretOrPrivateKey이다
 - payload는 우리가 토큰에 넣게 되는 것이고
 - secretOrPrivateKey는 서버가 서명한다
+- 여기서는 payload에 user id를 넣었다
 
 - 토큰은 누구나 볼 수 있기 때문에 비밀정보를 보관하지 않는다.
 - 목적은 정보를 넣는것이고 우리가 그것을 확인하는 것
 - iat : 토큰이 이슈된 시간
 - expires도 제공한다. 2, 7, 60일 등 만료시간이 생긴다.
+
+- 현실적으로 모든 mutation에 토큰을 제공하는 것은 비효율적이므로 추상화과정이 필요하다.
+- 

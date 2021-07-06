@@ -22,7 +22,7 @@ export default{
                 //패스워드 해슁
                 const hashPassword = await bcrypt.hash(password, 10);
                 //저장, user반환
-                return await client.user.create({
+                await client.user.create({
                     data: {
                         username,
                         email,
@@ -31,9 +31,13 @@ export default{
                         password : hashPassword
                     }
                 });
+                return {ok:true,}
             }
             catch(error){
-                return error;
+                return{
+                    ok: false,
+                    error: error,
+                }
             }
         },
     }
